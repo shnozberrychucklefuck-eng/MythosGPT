@@ -114,7 +114,7 @@ def banner(cfg):
     if not art:
         if HAS_FIGLET:
             try:
-                art = pyfiglet.figlet_format("Mythos-GPT", font="sub-zero")
+                art = pyfiglet.figlet_format("Mythos-GPT", font="gradient", width=200)
             except Exception:
                 art = ""
         art = art or "MYTHOS-GPT"
