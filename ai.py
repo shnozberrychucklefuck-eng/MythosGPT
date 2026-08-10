@@ -250,6 +250,7 @@ def chat_session(cfg):
             sys.exit(0)
         if user_input.lower() == "menu":
             return
+        print()  # one blank line between question and answer
         err = stream_chat(cfg, user_input)
         if err:
             print(f"{C['red']}{err}{C['reset']}")
