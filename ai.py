@@ -26,7 +26,7 @@ except ImportError:
 
 CONFIG_FILE = "mythosgpt_config.json"
 PROMPT_FILE = "system-prompt.txt"
-SITE_URL = "https://github.com/shnozberrychucklefuck-eng/Mythos-GPT"
+SITE_URL = "https://github.com/shnozberrychucklefuck-eng/MythosGPT"
 SITE_NAME = "Mythos-GPT"
 BASE_URL_DEFAULT = "http://127.0.0.1:8080/v1"
 MODEL_DEFAULT = "Claude Mythos"
