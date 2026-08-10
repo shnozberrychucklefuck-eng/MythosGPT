@@ -56,6 +56,11 @@ C = {
     "yellow": "\033[96m", "cyan": "\033[94m", "bold": "\033[1m",
 }
 
+# Ice ramp (top = white, bottom = deep blue) — one color per banner line
+ICE = ["\033[38;5;231m", "\033[38;5;189m", "\033[38;5;153m", "\033[38;5;117m",
+       "\033[38;5;81m", "\033[38;5;75m", "\033[38;5;69m", "\033[38;5;63m",
+       "\033[38;5;33m", "\033[38;5;21m"]
+
 
 def is_local_url(url):
     return any(h in url for h in ("localhost", "127.0.0.1", "0.0.0.0", "[::1]"))
@@ -109,11 +114,15 @@ def banner(cfg):
     if not art:
         if HAS_FIGLET:
             try:
-                art = pyfiglet.figlet_format("Mythos-GPT", font="big")
+                art = pyfiglet.figlet_format("Mythos-GPT", font="sub-zero")
             except Exception:
                 art = ""
         art = art or "MYTHOS-GPT"
-    print(f"{C['red']}{art}{C['reset']}")
+    for i, line in enumerate(art.split("\n")):
+        if line.strip():
+            print(f"{ICE[i % len(ICE)]}{line}{C['reset']}")
+        else:
+            print()
     display_name = get_display_name(cfg)
     print(f"{C['yellow']}Mythos-GPT | {display_name} | {time.strftime('%Y-%m-%d %H:%M:%S')}{C['reset']}\n")
 
