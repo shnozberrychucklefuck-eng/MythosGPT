@@ -1,4 +1,4 @@
-# MythosGPT
+# Mythos-GPT
 
 A streaming, local-first CLI chatbot. Talks to any OpenAI-compatible endpoint —
 by default your own local llama.cpp server. Ships with an editable ASCII banner,
