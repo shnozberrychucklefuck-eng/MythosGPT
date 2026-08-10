@@ -117,9 +117,11 @@ def banner(cfg):
             except Exception:
                 art = ""
         art = art or "MYTHOS-GPT"
-    for i, line in enumerate(art.split("\n")):
+    idx = 0
+    for line in art.split("\n"):
         if line.strip():
-            print(f"{ICE[i % len(ICE)]}{line}{C['reset']}")
+            print(f"{ICE[idx % len(ICE)]}{line}{C['reset']}")
+            idx += 1
         else:
             print()
     display_name = get_display_name(cfg)
